@@ -33,29 +33,26 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Sign in as Administrator / Petugas</p>
 
-      <form action="assets/index2.html" method="post">
+      <form action="proses_login_admin.php" method="post">
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <input type="text" name="username" class="form-control" placeholder="Username" required>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-8">
-            <a href="petugas/index.php">Login</a>
+            <a href="index.php">Login sebagai Siswa</a>
           </div>
-          <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
           </div>
-          <!-- /.col -->
         </div>
       </form>
-
     </div>
     <!-- /.login-box-body -->
   </div>

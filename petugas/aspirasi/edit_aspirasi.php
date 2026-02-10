@@ -45,13 +45,12 @@ $data = mysqli_fetch_array($query);
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">BUKTI FOTO</label>
+              <label class="col-sm-2 control-label">FOTO BUKTI</label>
               <div class="col-sm-10">
                 <?php if (!empty($data['bukti'])) { ?>
-                  <div style="margin-bottom: 10px;">
-                    <img src="dist/img/bukti/<?php echo $data['bukti']; ?>" alt="Bukti Kerusakan" style="max-width: 300px; border: 1px solid #ddd; padding: 5px; border-radius: 5px;">
-                  </div>
-                  <a href="dist/img/bukti/<?php echo $data['bukti']; ?>" target="_blank" class="btn btn-default btn-xs"><i class="fa fa-search-plus"></i> Perbesar Gambar</a>
+                  <img src="../img/<?php echo $data['bukti']; ?>" class="img-responsive img-thumbnail" style="max-width: 300px;">
+                  <br><br>
+                  <a href="../img/<?php echo $data['bukti']; ?>" target="_blank" class="btn btn-xs btn-default"><i class="fa fa-search-plus"></i> Lihat Foto Ukuran Penuh</a>
                 <?php } else { ?>
                   <p class="form-control-static text-muted"><em>Tidak ada foto bukti yang diunggah.</em></p>
                 <?php } ?>

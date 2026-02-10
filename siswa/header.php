@@ -66,24 +66,21 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="../assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">Alexander Pierce</span>
+                <span class="hidden-xs"><?php echo $_SESSION['nm_siswa']; ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
                   <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2012</small>
+                    <?php echo $_SESSION['nm_siswa']; ?>
+                    <small>Siswa Sarpras Care</small>
                   </p>
                 </li>
                 <!-- Menu Footer-->
-                <li class="user-footer">
-                  <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                  </div>
-                </li>
+                <div class="pull-right">
+                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                </div>
               </ul>
             </li>
           </ul>
@@ -92,56 +89,23 @@
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
-      <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-          <div class="pull-left image">
-            <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-          </div>
-          <div class="pull-left info">
-            <p>Alexander Pierce</p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-          </div>
-        </div>
-
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-          <li class="<?php echo (!isset($_GET['page'])) ? 'active' : ' '; ?>">
-            <a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
-          </li>
-          <li class="treeview <?php echo (isset($_GET['page']) && in_array($_GET['page'], ['data_admin', 'tambah_admin', 'edit_admin', 'data_siswa', 'tambah_siswa', 'edit_siswa', 'data_kategori', 'tambah_kategori', 'edit_kategori', 'data_lokasi', 'tambah_lokasi', 'edit_lokasi', 'data_sarana', 'tambah_sarana', 'edit_sarana'])) ? 'active' : ' '; ?>">
-            <a href="#">
-              <i class="fa fa-pie-chart"></i>
-              <span>Master Data</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
+          <li class="<?php echo (!isset($_GET['page']) || $_GET['page'] == 'dashboard') ? 'active' : ''; ?>">
+            <a href="index.php?page=dashboard">
+              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
-            <ul class="treeview-menu">
-              <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_admin' || $_GET['page'] == 'tambah_admin' || $_GET['page'] == 'edit_admin')) ? 'active' : ' '; ?>">
-                <a href="index.php?page=data_admin"><i class="fa fa-circle-o"></i> Data Admin</a>
-              </li>
-              <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_siswa' || $_GET['page'] == 'tambah_siswa' || $_GET['page'] == 'edit_siswa')) ? 'active' : ' '; ?>">
-                <a href="index.php?page=data_siswa"><i class="fa fa-circle-o"></i> Data Siswa</a>
-              </li>
-              <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_kategori' || $_GET['page'] == 'tambah_kategori' || $_GET['page'] == 'edit_kategori')) ? 'active' : ' '; ?>">
-                <a href="index.php?page=data_kategori"><i class="fa fa-circle-o"></i> Data Kategori</a>
-              </li>
-              <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_lokasi' || $_GET['page'] == 'tambah_lokasi' || $_GET['page'] == 'edit_lokasi')) ? 'active' : ' '; ?>">
-                <a href="index.php?page=data_lokasi"><i class="fa fa-circle-o"></i> Data Lokasi</a>
-              </li>
-              <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_sarana' || $_GET['page'] == 'tambah_sarana' || $_GET['page'] == 'edit_sarana')) ? 'active' : ' '; ?>">
-                <a href="index.php?page=data_sarana"><i class="fa fa-circle-o"></i> Data Sarana</a>
-              </li>
-            </ul>
           </li>
-          <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_aspirasi' || $_GET['page'] == 'edit_aspirasi')) ? 'active' : ' '; ?>">
-            <a href="index.php?page=data_aspirasi"><i class="fa fa-dashboard"></i> <span>Aspirasi</span></a>
+          <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_aduan' || $_GET['page'] == 'tambah_aduan')) ? 'active' : ''; ?>">
+            <a href="index.php?page=data_aduan">
+              <i class="fa fa-bullhorn"></i> <span>Aduan Saya</span>
+            </a>
           </li>
-          <li><a href="#"><i class="fa fa-dashboard"></i> <span>Laporan</span></a></li>
-          <li><a href="#"><i class="fa fa-dashboard"></i> <span>Logout</span></a></li>
+          <li>
+            <a href="logout.php">
+              <i class="fa fa-sign-out"></i> <span>Logout</span>
+            </a>
+          </li>
         </ul>
       </section>
-      <!-- /.sidebar -->
     </aside>

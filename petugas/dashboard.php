@@ -49,7 +49,6 @@
       <div class="small-box bg-yellow">
         <div class="inner">
           <h3>44</h3>
-
           <p>Laporan Dalam Proses</p>
         </div>
         <div class="icon">

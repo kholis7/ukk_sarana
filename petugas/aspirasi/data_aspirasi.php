@@ -56,7 +56,9 @@
                   <td><?php echo $aspirasi['aspirasi']; ?></td>
                   <td>
                     <?php if (!empty($aspirasi['bukti'])) { ?>
-                      <a href="dist/img/bukti/<?php echo $aspirasi['bukti']; ?>" target="_blank" class="btn btn-xs btn-default">Lihat Foto</a>
+                      <a href="../img/<?php echo $aspirasi['bukti']; ?>" target="_blank">
+                        <img src="../img/<?php echo $aspirasi['bukti']; ?>" width="60" style="border-radius: 5px; border: 1px solid #ccc;">
+                      </a>
                     <?php } else {
                       echo '<span class="text-muted">No Photo</span>';
                     } ?>
