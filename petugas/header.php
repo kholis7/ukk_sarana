@@ -110,7 +110,7 @@
           <li class="<?php echo (!isset($_GET['page'])) ? 'active' : ' '; ?>">
             <a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
           </li>
-          <li class="treeview <?php echo (isset($_GET['page']) && in_array($_GET['page'], ['data_admin', 'tambah_admin', 'edit_admin', 'data_siswa', 'tambah_siswa', 'edit_siswa', 'data_kategori', 'tambah_kategori', 'edit_kategori', 'data_lokasi', 'tambah_lokasi', 'edit_lokasi', 'data_sarana', 'tambah_sarana', 'edit_sarana'])) ? 'active' : ' '; ?>">
+          <li class="treeview <?php echo (isset($_GET['page']) && in_array($_GET['page'], ['data_admin', 'tambah_admin', 'edit_admin', 'data_siswa', 'tambah_siswa', 'edit_siswa', 'data_kategori', 'tambah_kategori', 'edit_kategori', 'data_lokasi', 'tambah_lokasi', 'edit_lokasi', 'data_sarana', 'tambah_sarana', 'edit_sarana', 'tambah_aspirasi', 'edit_aspirasi'])) ? 'active' : ' '; ?>">
             <a href="#">
               <i class="fa fa-pie-chart"></i>
               <span>Master Data</span>
@@ -136,7 +136,9 @@
               </li>
             </ul>
           </li>
-          <li><a href="#"><i class="fa fa-dashboard"></i> <span>Aspirasi</span></a></li>
+          <li class="<?php echo (isset($_GET['page']) && ($_GET['page'] == 'data_aspirasi' || $_GET['page'] == 'edit_aspirasi')) ? 'active' : ' '; ?>">
+            <a href="index.php?page=data_aspirasi"><i class="fa fa-dashboard"></i> <span>Aspirasi</span></a>
+          </li>
           <li><a href="#"><i class="fa fa-dashboard"></i> <span>Laporan</span></a></li>
           <li><a href="#"><i class="fa fa-dashboard"></i> <span>Logout</span></a></li>
         </ul>

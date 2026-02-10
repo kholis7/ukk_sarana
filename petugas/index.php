@@ -53,6 +53,12 @@ if (isset($_GET['page'])) {
     case 'edit_sarana':
       include "sarana/edit_sarana.php";
       break;
+    case 'data_aspirasi':
+      include "aspirasi/data_aspirasi.php";
+      break;
+    case 'edit_aspirasi':
+      include "aspirasi/edit_aspirasi.php";
+      break;
     default:
       include "dashboard.php";
       break;
