@@ -1,23 +1,26 @@
 <?php
+// 1. Pastikan path koneksi benar. 
+// Jika file ini ada di folder petugas/aspirasi/, maka ../../koneksi/koneksi.php sudah benar.
+// Namun, pastikan nama filenya benar-benar koneksi.php
 include "../../koneksi/koneksi.php";
 
-$id_sarana = $_POST['id_sarana'];
-$nm_sarana = $_POST['nm_sarana'];
-$kategori = $_POST['kategori'];
-$lokasi = $_POST['lokasi'];
+// 2. Ambil data dari POST (sesuai dengan name di form edit_aspirasi)
+$id_aspirasi = $_POST['id_aspirasi'];
+$status      = $_POST['status'];
 
-$query = "UPDATE tb_sarana SET nm_sarana = '$nm_sarana', id_kategori = '$kategori', id_lokasi = '$lokasi' WHERE id_sarana = '$id_sarana'";
+// 3. Eksekusi Update
+$query = "UPDATE tb_aspirasi SET status = '$status' WHERE id_aspirasi = '$id_aspirasi'";
 
 $update = mysqli_query($koneksi, $query);
 
 if ($update) {
   echo "<script>
-  alert ('Data Sarana Berhasil Diupdate');
-  window.location.href = '../index.php?page=data_sarana';
-  </script>";
+    alert('Status Aspirasi Berhasil Diperbarui');
+    window.location.href = '../index.php?page=data_aspirasi';
+    </script>";
 } else {
   echo "<script>
-  alert ('Gagal Menyimpan Data : " . mysqli_error($koneksi) . "');
-  window.history.back();
-  </script>";
+    alert('Gagal Memperbarui Status: " . mysqli_error($koneksi) . "');
+    window.history.back();
+    </script>";
 }
