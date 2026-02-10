@@ -70,7 +70,6 @@
                   </td>
                   <td>
                     <a href="index.php?page=edit_aspirasi&id=<?php echo $aspirasi['id_aspirasi']; ?>" class="btn btn-xs btn-warning">Edit</a>
-                    <a href="aspirasi/delete_aspirasi.php?id=<?php echo $aspirasi['id_aspirasi']; ?>" class="btn btn-xs btn-danger" onclick="return confirm('Hapus data aspirasi ini?')">Delete</a>
                   </td>
                 </tr>
               <?php } ?>
