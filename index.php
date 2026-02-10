@@ -35,24 +35,19 @@
     <div class="login-box-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="assets/index2.html" method="post">
+      <form action="proses_login_siswa.php" method="post">
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <input type="text" name="nis" class="form-control" placeholder="Nomor Induk Siswa (NIS)" required>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="nisn" class="form-control" placeholder="Password (NISN)" required>
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-          <div class="col-xs-8">
-            <a href="">Login</a>
+          <div class="col-xs-4 pull-right">
+            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
           </div>
-          <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-          </div>
-          <!-- /.col -->
         </div>
       </form>
 
